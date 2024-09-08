@@ -1,0 +1,96 @@
+body{
+    text-align:center;
+}
+a{
+    text-decoration:rgb(110, 0, 77) underline;
+}
+h1{text-decoration: blue  wavy underline;
+    font-weight: 500;
+}
+h2{ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 50px;
+
+}p{
+    line-height: 20px;
+    text-transform:capitalize;
+}
+h3{
+    text-align: center;
+    text-transform: capitalize;
+}
+*{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#inner{
+   font-size:25px;
+}
+#outer{
+font-size: 10px;
+}
+DIV {
+    height:250px;
+}
+h2{
+    border-style:dashed;
+    border-color: aqua;
+    border-width: 5px;
+    background-color: purple;
+  
+}
+h4{
+    border: 5px dashed rgb(58, 50, 126) ;
+    background-color: yellow; 
+    width: 700px;
+    height:40px;
+    border-radius: 25px;
+    padding-top:4%;
+    margin-top: 10%;
+}
+
+#kalu{
+    background-color: yellowgreen;
+    width:100px;
+    height:120px;
+    display: inline;
+}
+#bhalu{
+    background-color: rgb(205, 50, 50,0.2);
+    width:100px;
+    height:120px;
+    display:inline-block ;
+}
+#Maalu{
+    background-color: rgb(112, 50, 205);
+    width:100px;
+    height:120px;
+    display:inline-block ;
+}
+.luna{
+    border: 5px rgb(31, 96, 31) dotted;
+color:rgb(221, 232, 232);
+ background-color: rgb(15, 5, 23); 
+
+height: 30px;
+width:50%;
+}
+#yuvi:hover{
+    color: orangered;
+}
+.boxes{
+    border:2px black double;
+    background-color: rgb(131, 172, 28);
+    color:rgb(12, 12, 11);
+    height:40px;
+    width:50%;
+    margin:10px;
+}
+#wh{
+    background-color: green;
+    margin:5px;
+}
+#gr{
+    background-color: white;
+    margin:5px;
+
+    

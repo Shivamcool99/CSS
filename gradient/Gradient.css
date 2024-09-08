@@ -1,0 +1,28 @@
+ *{
+    display:inline-block; margin: 10px;
+ }
+
+
+.mama {border: 2px solid black;
+width:30%;
+height: 30%;
+background-image: linear-gradient(to  bottom left, rgb(108, 215, 108), rgb(106, 106, 217),rgb(190, 190, 70) ,rgb(228, 58, 20)); 
+margin:20px;
+}
+
+.chacha {
+    border: 2px solid black;
+    width:30%;
+    height: 30%;
+    background-image: radial-gradient( blue, yellow,green );
+    margin:20px;
+   
+ }
+.fufa{
+    width:25%;
+    height: 25%;
+   border-radius: 50%;
+    border:2px black;
+   text-align: center;
+    background-image: conic-gradient( red,yellow,green, blue);
+}

@@ -1,0 +1,143 @@
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #333;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00aaff;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.section {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.section_pic-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.section_pic-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.section_text {
+    font-size: 1.5rem;
+}
+
+.btn-container {
+    margin: 1rem 0;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-color-1 {
+    background-color: #00aaff;
+    color: #ffffff;
+}
+
+.btn-color-1:hover {
+    background-color: #0088cc;
+}
+
+.btn-color-2 {
+    background-color: #ffaa00;
+    color: #ffffff;
+}
+
+.btn-color-2:hover {
+    background-color: #cc8800;
+}
+
+.arrow {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.arrow:hover {
+    transform: translateY(-10px);
+}
+
+.contact-info-container {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.contact-info-container img {
+    margin-right: 1rem;
+}
+
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer .nav-links-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+footer .nav-links-container a {
+    color: #ffffff;
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .nav-links-container a:hover {
+    color: #00aaff;
+}
+
+.success-message, .error-message {
+    display: none;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.success-message {
+    color: #00ff00;
+}
+
+.error-message {
+    color: #ff0000;
+}

@@ -1,0 +1,30 @@
+
+<!-- saved from url=(0133)https://idx-portfolio-1722710999009.cluster-e3wv6awer5h7kvayyfoein2u4a.cloudworkstations.dev/www/vscodehelper.html?rand=1724072919466 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+  </head>
+  <body style="padding: 0px; display: flex">
+    <script>
+      window.addEventListener('message', eventFromVsCode => {
+        if (eventFromVsCode.source !== window.top) {
+          if (eventFromVsCode.data.type == 'boq') {
+            // only listen to messages from vscode
+            // communication with boq happens through message channel
+            const channel = new MessageChannel();
+            channel.port2.onmessage = eventFromBoq => {
+              window.parent.postMessage(
+                {
+                  requestId: eventFromVsCode.data.requestId,
+                  payload: eventFromBoq.data,
+                },
+                '*'
+              );
+            };
+            window.top.postMessage(eventFromVsCode.data.payload, '*', [channel.port1]);
+          }
+        }
+      });
+    </script>
+  
+
+</body></html>

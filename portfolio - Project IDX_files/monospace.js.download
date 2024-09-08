@@ -1,0 +1,70 @@
+// This file includes runtime monkeypatches for the CodeOSS workbench
+
+installJetBrainsMonoFont()
+installRuntimeStyleChanges()
+
+function installJetBrainsMonoFont () {
+  // Install default editor font
+  insertStyles([fontFaceRuleForWeight('regular'), fontFaceRuleForWeight('700')].join('\n'))
+
+  /**
+   * See b/298052911.
+   *
+   * Eagerly try to load the font. This aims to get the font loaded by the time the workbench
+   * measures font metrics for the default editor font. This isn't an issue when using system
+   * default fonts (since they're always avaialble), but CodeOSS wasn't optimized to handle fonts
+   * loaded with @font-face on the web. And because CodeOSS measures font metrics extremely early,
+   * we try to kick off loading the font ASAP.
+   *
+   * Note: An alternative fix seems to be to set `editor.fontLigatures = true`, but this is a bit
+   * more heavy-handed, requiring folks to use font ligatures (which may also be confusing to newbie
+   * users).
+   */
+  document.fonts.load('16px JetBrains Mono')
+}
+
+function installRuntimeStyleChanges () {
+  // update "letterpress" watermark
+  insertStyles(`
+  .monaco-workbench .editor-group-watermark > .letterpress,
+  .monaco-workbench.hc-light .editor-group-watermark > .letterpress {
+    background-image: url("data:image/svg+xml,%3Csvg width='192' height='192' viewBox='0 0 192 192' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50.667 144a8 8 0 0 1 8-8h42.667a8 8 0 0 1 0 16H58.667a8 8 0 0 1-8-8ZM101.333 120a8 8 0 0 1 8-8h8a8 8 0 0 1 8 8 8 8 0 0 1-8 8h-8a8 8 0 0 1-8-8ZM69.333 120a8 8 0 0 1 8-8h8a8 8 0 0 1 0 16h-8a8 8 0 0 1-8-8ZM88 96a8 8 0 0 1 8-8h18.667a8 8 0 0 1 0 16H96a8 8 0 0 1-8-8ZM130.667 96a8 8 0 1 1 16 0 8 8 0 0 1-16 0ZM69.333 72a8 8 0 0 1 8-8H120a8 8 0 0 1 0 16H77.333a8 8 0 0 1-8-8ZM74.667 48a8 8 0 0 1 8-8h18.667a8 8 0 0 1 0 16H82.667a8 8 0 0 1-8-8ZM50.667 48a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z' opacity='.1'/%3E%3C/svg%3E")
+      !important;
+  }
+
+  .monaco-workbench.vs-dark .editor-group-watermark > .letterpress {
+    background-image: url("data:image/svg+xml,%3Csvg width='192' height='192' viewBox='0 0 192 192' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50.667 144a8 8 0 0 1 8-8h42.667a8 8 0 0 1 0 16H58.667a8 8 0 0 1-8-8ZM101.333 120a8 8 0 0 1 8-8h8a8 8 0 0 1 8 8 8 8 0 0 1-8 8h-8a8 8 0 0 1-8-8ZM69.333 120a8 8 0 0 1 8-8h8a8 8 0 0 1 0 16h-8a8 8 0 0 1-8-8ZM88 96a8 8 0 0 1 8-8h18.667a8 8 0 0 1 0 16H96a8 8 0 0 1-8-8ZM130.667 96a8 8 0 1 1 16 0 8 8 0 0 1-16 0ZM69.333 72a8 8 0 0 1 8-8H120a8 8 0 0 1 0 16H77.333a8 8 0 0 1-8-8ZM74.667 48a8 8 0 0 1 8-8h18.667a8 8 0 0 1 0 16H82.667a8 8 0 0 1-8-8ZM50.667 48a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z' opacity='.3'/%3E%3C/svg%3E")
+      !important;
+  }
+
+  .monaco-workbench.hc-black .editor-group-watermark > .letterpress {
+    background-image: url("data:image/svg+xml,%3Csvg width='192' height='192' fill='%23fff' viewBox='0 0 192 192' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50.667 144a8 8 0 0 1 8-8h42.667a8 8 0 0 1 0 16H58.667a8 8 0 0 1-8-8ZM101.333 120a8 8 0 0 1 8-8h8a8 8 0 0 1 8 8 8 8 0 0 1-8 8h-8a8 8 0 0 1-8-8ZM69.333 120a8 8 0 0 1 8-8h8a8 8 0 0 1 0 16h-8a8 8 0 0 1-8-8ZM88 96a8 8 0 0 1 8-8h18.667a8 8 0 0 1 0 16H96a8 8 0 0 1-8-8ZM130.667 96a8 8 0 1 1 16 0 8 8 0 0 1-16 0ZM69.333 72a8 8 0 0 1 8-8H120a8 8 0 0 1 0 16H77.333a8 8 0 0 1-8-8ZM74.667 48a8 8 0 0 1 8-8h18.667a8 8 0 0 1 0 16H82.667a8 8 0 0 1-8-8ZM50.667 48a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z' opacity='.3'/%3E%3C/svg%3E")
+      !important;
+  }
+  `)
+}
+
+function insertStyles (css) {
+  let styleNode = document.createElement('style')
+  styleNode.setAttribute('type', 'text/css')
+  styleNode.appendChild(document.createTextNode(css))
+  document.head.appendChild(styleNode)
+}
+
+function fontFaceRuleForWeight (weight) {
+  return `
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-display: block;
+    font-weight: ${weight === 'regular' ? 400 : weight};
+    src: url('/www/fonts/jetbrains-mono-v13-latin-${weight}.eot'); /* IE9 Compat Modes */
+    src: local(''),
+        url('/www/fonts/jetbrains-mono-v13-latin-${weight}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('/www/fonts/jetbrains-mono-v13-latin-${weight}.woff2') format('woff2'), /* Super Modern Browsers */
+        url('/www/fonts/jetbrains-mono-v13-latin-${weight}.woff') format('woff'), /* Modern Browsers */
+        url('/www/fonts/jetbrains-mono-v13-latin-${weight}.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('/www/fonts/jetbrains-mono-v13-latin-${weight}.svg#JetBrainsMono') format('svg'); /* Legacy iOS */
+  }
+  `
+}

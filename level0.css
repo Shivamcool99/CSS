@@ -1,0 +1,41 @@
+ level1
+ *{
+    
+    color:blue;
+}   
+
+
+
+
+\\it is a way to write universal selector and this is   responsible to change  the color of  all lines , heading   or we can say content
+
+
+
+ol{
+    color: #b2d31f;
+
+}button{
+    color:rgb(215, 132, 36);
+    background-color: rgb(49, 45, 45);
+}
+\\ this is element selector
+ul{
+    color:rgb(28, 171, 171);
+}
+
+body {
+   background-color:rgb(46, 48, 45);}
+   #doosra{
+    color :burlywood;
+   }
+   .ab{
+    color:blueviolet;
+   }
+    div {
+background-color: blue;
+color:blanchedalmond;
+    }
+  .heading {
+        color:red;
+    }
+    

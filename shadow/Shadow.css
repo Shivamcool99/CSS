@@ -1,0 +1,38 @@
+
+*{
+    margin: 40px;
+    
+}
+h1{ text-shadow:3px  0px   rgb(205, 67, 90);
+   
+    text-shadow:3px  0px   rgb(205, 67, 90) , 8px 8px yellow;
+
+
+}
+
+#box{
+    box-shadow: -10px -5px  15px black , 15px 10px 20px rgb(104, 50, 205);/* you have to give color of your box shadow diifer from text        ,   third px show the blur effect in the shadow ,  if you want multiple shadow then pass  the second parameter of (hori ,ver, blur, color) and so on       ,     if you want opposite side shadow then you have pass negative parameter(-h -v )*/
+    width: 500px;
+    height:100px;
+    background-color: rgb(111, 137, 137);
+    color:rgb(95, 31, 158)
+    
+}
+#box1{
+    box-shadow: -10px -5px  15px black;
+    width: 500px;
+    height:100px;
+    background-color: rgb(111, 137, 137);
+    color:rgb(95, 31, 158)
+}
+
+
+#box2{
+    box-shadow:1px 1px 5px rgb(8, 5, 13) ;
+    width: 500px;
+    height:100px;
+    background-color: rgb(111, 137, 137);
+    color:rgb(95, 31, 158);
+    
+    
+}

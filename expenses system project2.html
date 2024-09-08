@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Voting</h1>
+
+        <!-- Voting for President -->
+        <h2>Vote for President</h2>
+        <div id="president-candidates">
+            <!-- Candidate template -->
+            <div class="candidate">
+                <img src="candidate1.jpg" alt="Candidate 1">
+                <p>Candidate 1</p>
+                <button onclick="vote('president', 'Candidate 1')">Vote</button>
+            </div>
+            <!-- Add more candidates here -->
+        </div>
+
+        <!-- Voting for Election Committee -->
+        <h2>Vote for Election Committee</h2>
+        <div id="election-committee-candidates">
+            <!-- Candidate template -->
+            <div class="candidate">
+                <img src="candidate2.jpg" alt="Candidate 2">
+                <p>Candidate 2</p>
+                <button onclick="vote('committee', 'Candidate 2')">Vote</button>
+            </div>
+            <!-- Add more candidates here -->
+        </div>
+
+        <!-- Voting for Vice President -->
+        <h2>Vote for Vice President</h2>
+        <div id="vice-president-candidates">
+            <!-- Candidate template -->
+            <div class="candidate">
+                <img src="candidate3.jpg" alt="Candidate 3">
+                <p>Candidate 3</p>
+                <button onclick="vote('vice-president', 'Candidate 3')">Vote</button>
+            </div>
+            <!-- Add more candidates here -->
+        </div>
+
+        <!-- Voting for General Secretary -->
+        <h2>Vote for General Secretary</h2>
+        <div id="general-secretary-candidates">
+            <!-- Candidate template -->
+            <div class="candidate">
+                <img src="candidate4.jpg" alt="Candidate 4">
+                <p>Candidate 4</p>
+                <button onclick="vote('secretary', 'Candidate 4')">Vote</button>
+            </div>
+            <!-- Add more candidates here -->
+        </div>
+
+        <button onclick="showResults()">Show Results</button>
+
+        <!-- Results Section -->
+        <div id="results-section" class="hidden">
+            <h2>Results</h2>
+            <ul id="results-list"></ul>
+        </div>
+    </div>
+
+    <script src="expenses system project2.js"></script>
+</body>
+</html>

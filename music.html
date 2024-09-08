@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="music.css">
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <script src="https://kit.fontawesome.com/860e7596f3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+</head>
+
+<body>
+    
+    <div class="audio-container">
+        <h1><b> MUSIC PLAYER</b></h1>
+
+        <div class="audio-img-wrapper">
+            <div class="audio-img">
+                <img src="images/letmedown.jpg" alt="" class="img">
+            </div>
+
+            <h2 class="audio-title">Title of audio</h2>
+            <h6 class="audio-singer">Singer name</h6>
+        </div>
+
+        <div class="audio-progress">
+            <div class="progress">
+                <!-- <div class="progress-bar">
+                    <div class="progress-head"></div>
+                </div> -->
+                <div class="current-time ">00:00</div>
+                <input type="range" name="" id="" min="1" max="100" value="0" class="seek_slider " onchange="seekTo()">
+                <div class="duration">00:00</div>
+            </div>
+            <!-- <audio src="audio/let me love you.mp3"></audio> -->
+            
+            
+        </div>
+
+        <div class="audio-btns">
+
+            <button class="btn skip-back" onclick="prevTrack()">
+                <i class="fa-solid fa-backward-step buttonSide"></i>
+            </button>
+
+            <button class="btn play" onclick="playpauseTrack()">
+                <span> <i class="fa-solid fa-play buttonDisplay"></i> </span>
+            </button>
+
+            <button class="btn skip-forward" onclick="nextTrack()">
+                <i class="fa-solid fa-forward-step buttonSide"></i>
+            </button>
+        </div>
+        <div style="text-align: center;" class="footer"> &#169; Komal Reddy K </div>
+    </div>
+
+    
+    <script src="music.js"></script>
+</body>
+
+</html>

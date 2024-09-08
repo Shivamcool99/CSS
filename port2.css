@@ -1,0 +1,31 @@
+@media only screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .section_pic-container img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn-container {
+        flex-direction: column;
+    }
+
+    .btn {
+        margin: 0.5rem 0;
+    }
+
+    .contact-info-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info-container img {
+        margin-bottom: 1rem;
+    }
+}
